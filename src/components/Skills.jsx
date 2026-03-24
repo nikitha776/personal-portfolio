@@ -4,24 +4,29 @@ import { Leaf, Code2, Database, Layout, Wrench } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "FullStack Development",
     icon: <Layout className="text-nature-green" size={24} />,
-    skills: ["HTML", "CSS", "JavaScript", "ReactJS", "Tailwind CSS", "Zustand"]
+    skills: ["HTML", "CSS", "JavaScript", "ReactJS", "Tailwind CSS", "Zustand", "Redux", "NextJS", "Node.js", "Express.js", "MongoDB", "WebSockets", "REST APIs", "NextJS", "PostgreSQL", "Firebase", "MySQL"]
   },
-  {
-    title: "Backend",
-    icon: <Database className="text-nature-brown" size={24} />,
-    skills: ["Node.js", "Express.js", "MongoDB", "WebSockets", "Cloudinary"]
-  },
+  // {
+  //   title: "Backend",
+  //   icon: <Database className="text-nature-brown" size={24} />,
+  //   skills: ["Node.js", "Express.js", "MongoDB", "WebSockets", "REST APIs", "NextJS", "PostgreSQL", "Firebase", "MySQL"]
+  // },
   {
     title: "Languages & Core",
     icon: <Code2 className="text-orange-400" size={24} />,
-    skills: ["C", "C++", "Java", "Data Structures & Algorithms"]
+    skills: ["C", "C++", "Java", "Python", "JavaScript", "Data Structures & Algorithms", "Operating Systems", "Database Management Systems", "Computer Networks", "Object Oriented Programming"]
   },
   {
     title: "Tools",
     icon: <Wrench className="text-slate-500" size={24} />,
-    skills: ["Git", "GitHub", "VS Code"]
+    skills: ["Git", "GitHub", "VS Code", "Docker", "Postman", "Figma"]
+  },
+  {
+    title: "Machine Learning & AI",
+    icon: <Wrench className="text-slate-500" size={24} />,
+    skills: ["Numpy", "Pandas", "Scikit-Learn", "Neural Networks", "Deep Learning (basic)", "NLP", "Tranformers", "RAG", "Langchain", "Supervised Learning", "Unsupervised Learning"]
   }
 ];
 

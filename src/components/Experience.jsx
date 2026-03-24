@@ -25,7 +25,7 @@ const Experience = () => {
 
             <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-md border-b-4 border-nature-brown/40 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-nature-brown"></div>
-              <h4 className="text-xl font-bold text-nature-darkWood mb-1">Associate</h4>
+              <h4 className="text-xl font-bold text-nature-darkWood mb-1">Member</h4>
               <p className="text-nature-green font-medium mb-4">Next Tech Lab (Norman Lab)</p>
               <p className="text-nature-darkWood/80">
                 Gained valuable experience contributing to various web and application development projects. Collaborated with peers to explore new technologies and solve complex technical challenges. Active involvement in event organizing and community building.

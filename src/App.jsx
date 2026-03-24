@@ -62,7 +62,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   
   // Parallax Background transformations
-  const skyY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const skyY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const hill1Y = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const hill2Y = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 
@@ -95,21 +95,25 @@ function App() {
   // Determine dynamic background glow based on active section
   const getBackgroundTint = () => {
     switch(activeSection) {
-      case 'skills': return 'bg-nature-green/5';
-      case 'projects': return 'bg-orange-900/5';
-      case 'contact': return 'bg-blue-900/5';
-      default: return 'bg-transparent';
+      case 'skills': return 'rgba(90, 110, 70, 0.05)'; // nature-green
+      case 'projects': return 'rgba(139, 94, 52, 0.05)'; // nature-brown
+      case 'contact': return 'rgba(30, 58, 138, 0.05)'; // blue
+      default: return 'rgba(0, 0, 0, 0)';
     }
   };
 
   return (
-    <div className={`min-h-screen bg-nature-beige text-gray-800 font-sans selection:bg-nature-green/30 relative transition-colors duration-1000 ${getBackgroundTint()}`}>
+    <div className="min-h-screen text-gray-800 font-sans selection:bg-nature-green/30 relative overflow-hidden transition-all duration-1000 ease-in-out" style={{ backgroundColor: '#DED6C4' }}>
       
-      {/* Layered Parallax Background */}
+      {/* Dynamic Overlay Tint */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-0 transition-colors duration-1000 ease-in-out"
+        style={{ backgroundColor: getBackgroundTint() }}
+      />
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Sky Gradient (Back Layer) */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-b from-[#C87B3B]/20 via-nature-beige to-nature-cream opacity-80"
+          className="absolute -top-[50vh] inset-x-0 h-[200vh] bg-gradient-to-b from-[#C87B3B]/20 via-nature-beige to-nature-cream opacity-80"
           style={{ y: skyY }}
         />
         
@@ -146,7 +150,7 @@ function App() {
         <Experience />
         <Contact />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

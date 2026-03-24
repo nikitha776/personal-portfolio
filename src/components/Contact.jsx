@@ -3,8 +3,21 @@ import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, Send, Flag } from 'lucide-react';
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+    
+    // Create the mailto link with pre-filled content
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    
+    window.location.href = `mailto:vlnikitha2006@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <section id="contact" className="py-20 px-6 md:px-12 relative bg-gradient-to-t from-nature-green/10 to-transparent">
+    <section id="contact" className="py-20 px-6 md:px-12 relative">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +54,7 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="https://linkedin.com/in/vissamsetty-lakshmi-nikitha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <a href="https://www.linkedin.com/in/nikitha-vissamsetty-61909627a/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="bg-nature-cream p-4 rounded-full text-nature-green border border-nature-green/20 group-hover:bg-nature-green group-hover:text-white transition-colors">
                   <Linkedin size={24} />
                 </div>
@@ -51,7 +64,7 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="https://github.com/vlnikitha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <a href="https://github.com/nikitha776" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="bg-nature-cream p-4 rounded-full text-nature-green border border-nature-green/20 group-hover:bg-nature-green group-hover:text-white transition-colors">
                   <Github size={24} />
                 </div>
@@ -71,12 +84,13 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex-1 bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-md border border-nature-green/20"
           >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-bold text-nature-darkWood/80 mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
+                  required
                   placeholder="Your Name"
                   className="w-full px-4 py-3 rounded-xl bg-white/50 border border-nature-green/20 focus:outline-none focus:ring-2 focus:ring-nature-green/40 focus:border-nature-green transition-colors"
                 />
@@ -87,6 +101,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  required
                   placeholder="your.email@example.com"
                   className="w-full px-4 py-3 rounded-xl bg-white/50 border border-nature-green/20 focus:outline-none focus:ring-2 focus:ring-nature-green/40 focus:border-nature-green transition-colors"
                 />
@@ -96,6 +111,7 @@ const Contact = () => {
                 <label htmlFor="message" className="block text-sm font-bold text-nature-darkWood/80 mb-2">Message</label>
                 <textarea
                   id="message"
+                  required
                   rows={4}
                   placeholder="How can I help you?"
                   className="w-full px-4 py-3 rounded-xl bg-white/50 border border-nature-green/20 focus:outline-none focus:ring-2 focus:ring-nature-green/40 focus:border-nature-green transition-colors resize-none"
