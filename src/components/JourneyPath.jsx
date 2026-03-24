@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import profileImage from '../image1.png';
+import profileImage from '../assets/image1.png';
 
 const AvatarPointer = () => (
   <motion.div 

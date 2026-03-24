@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, MapPin, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
-import project1 from '../image3.png';
-import project2 from '../image4.png';
-import project3 from '../image5.png';
-import project4 from '../image6.png';
-import project5 from '../image7.png';
+import project1 from '../assets/image3.png';
+import project2 from '../assets/image4.png';
+import project3 from '../assets/image5.png';
+import project4 from '../assets/image6.png';
+import project5 from '../assets/image7.png';
 
 const projects = [
   {
@@ -244,14 +244,28 @@ const Projects = () => {
 
                   {/* Links */}
                   <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-nature-darkWood/10 md:border-t-0 md:pt-0">
-                    <a href={project.github} className="flex items-center justify-center gap-2 text-xs font-bold text-nature-darkWood hover:text-white transition-all bg-white/80 hover:bg-nature-green px-5 py-2.5 rounded-xl backdrop-blur-md border border-white hover:border-nature-green shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
-                      <Github size={18} />
-                      Source Code
-                    </a>
-                    <a href={project.live} className="flex items-center justify-center gap-2 text-xs font-bold text-nature-darkWood hover:text-white transition-all bg-white/80 hover:bg-nature-green px-5 py-2.5 rounded-xl backdrop-blur-md border border-white hover:border-nature-green shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
-                      Live Demo
-                      <ExternalLink size={18} />
-                    </a>
+                    {project.github && project.github !== "#" ? (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-xs font-bold text-nature-darkWood hover:text-white transition-all bg-white/80 hover:bg-nature-green px-5 py-2.5 rounded-xl backdrop-blur-md border border-white hover:border-nature-green shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                        <Github size={18} />
+                        Source Code
+                      </a>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2 text-xs font-bold text-nature-darkWood/40 bg-white/40 px-5 py-2.5 rounded-xl border border-white/40 cursor-not-allowed" aria-disabled="true">
+                        <Github size={18} className="opacity-50" />
+                        Source Code
+                      </span>
+                    )}
+                    {project.live && project.live !== "#" ? (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-xs font-bold text-nature-darkWood hover:text-white transition-all bg-white/80 hover:bg-nature-green px-5 py-2.5 rounded-xl backdrop-blur-md border border-white hover:border-nature-green shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                        Live Demo
+                        <ExternalLink size={18} />
+                      </a>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2 text-xs font-bold text-nature-darkWood/40 bg-white/40 px-5 py-2.5 rounded-xl border border-white/40 cursor-not-allowed" aria-disabled="true">
+                        Live Demo
+                        <ExternalLink size={18} className="opacity-50" />
+                      </span>
+                    )}
                   </div>
                 </div>
 
