@@ -84,19 +84,23 @@ const JourneyPath = () => {
     restDelta: 0.001
   });
 
-  // Calculate position along the SVG path
-  const [beePos, setBeePos] = useState({ x: 50, y: 0 });
-
   useEffect(() => {
     return springScroll.onChange((v) => {
       setProgress(v);
-      if (pathRef.current && pathLength > 0) {
-        const point = pathRef.current.getPointAtLength(v * pathLength);
-        // Map the SVG coordinates (0-100 viewBox) to percentages
-        setBeePos({ x: point.x, y: point.y });
-      }
     });
-  }, [springScroll, pathLength]);
+  }, [springScroll]);
+
+  const avatarX = useTransform(springScroll, (v) => {
+    if (!pathRef.current || pathLength === 0) return "50%";
+    const point = pathRef.current.getPointAtLength(v * pathLength);
+    return `${point.x}%`;
+  });
+
+  const avatarY = useTransform(springScroll, (v) => {
+    if (!pathRef.current || pathLength === 0) return "0%";
+    const point = pathRef.current.getPointAtLength(v * pathLength);
+    return `${point.y / 10}%`;
+  });
 
   return (
     <div className="fixed left-0 md:left-4 top-0 bottom-0 w-24 md:w-32 pointer-events-none z-40 hidden sm:block">
@@ -137,8 +141,8 @@ const JourneyPath = () => {
       <motion.div 
         className="absolute transform -translate-x-1/2 -translate-y-1/2 mt-20 z-50"
         style={{ 
-          left: `${beePos.x}%`, 
-          top: `${beePos.y / 10}%` // viewBox height is 1000, so divide by 10 for percentage
+          left: avatarX, 
+          top: avatarY
         }}
       >
         <AvatarPointer />
