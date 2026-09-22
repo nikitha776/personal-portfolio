@@ -9,6 +9,38 @@ import project5 from '../assets/image7.png';
 
 const projects = [
   {
+    title: "NexusRAG",
+    description: "Built a multi-tenant RAG platform with workspace-based document management and AI-powered conversations. Implemented PDF processing, embeddings, semantic search, and scoped retrieval using Qdrant vector search. Developed workspace-specific chat memory and citation-aware responses for accurate document querying.",
+    tech: ["Next.js", "FastAPI", "Supabase", "Qdrant", "LlamaIndex", "Groq LLM"],
+    features: [
+      "Multi-tenant workspace-based document management",
+      "PDF processing and embedding generation",
+      "Semantic search with Qdrant vector database",
+      "Scoped retrieval for workspace isolation",
+      "Workspace-specific chat memory",
+      "Citation-aware AI responses",
+      "Groq LLM integration for fast inference"
+    ],
+    github: "https://github.com/nikitha776/NexusRAG",
+    live: "#"
+  },
+  {
+    title: "TypeRivals",
+    description: "Developed a real-time multiplayer typing game supporting seamless 1v1 typing races using React.js and Node.js. Implemented live opponent progress tracking, WPM calculation, and accuracy monitoring using WebSockets. Built a custom matchmaking system and responsive UI with Tailwind CSS for an engaging user experience.",
+    tech: ["React.js", "Node.js", "WebSockets", "Tailwind CSS", "MongoDB"],
+    features: [
+      "Real-time 1v1 typing races with WebSockets",
+      "Live opponent progress tracking",
+      "WPM (Words Per Minute) calculation",
+      "Accuracy monitoring and scoring",
+      "Custom matchmaking system",
+      "Responsive UI with Tailwind CSS",
+      "MongoDB for game state persistence"
+    ],
+    github: "#",
+    live: "#"
+  },
+  {
     title: "Cortex",
     description: "Built a role-based internal ERP system to streamline lab member management, enabling efficient tracking of check-ins, performance, and promotions.",
     image: project1,
