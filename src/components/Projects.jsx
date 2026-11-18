@@ -6,6 +6,7 @@ import project2 from '../assets/image4.png';
 import project3 from '../assets/image5.png';
 import project4 from '../assets/image6.png';
 import project5 from '../assets/image7.png';
+import typeRivalsPreview from '../assets/typerivals.jpg';
 
 const projects = [
   {
@@ -22,22 +23,30 @@ const projects = [
       "Groq LLM integration for fast inference"
     ],
     github: "https://github.com/nikitha776/NexusRAG",
+    live: "https://nexusrag.nikitha.space/"
+  },
+  {
+    title: "Biomedical Knowledge Graph for Liver Fibrosis Progression",
+    description: "A reproducible RNA-seq analysis and biomedical knowledge graph for studying liver fibrosis progression.",
+    tech: ["Python", "pandas", "NumPy", "SciPy", "scikit-learn", "Neo4j", "Cypher"],
+    features: [
+      "Built a reproducible pipeline to harmonise eight public liver RNA-seq datasets (1,085 samples) and integrate gene expression with curated biomedical data in Neo4j.",
+      "Identified 3,845 genes associated with fibrosis severity, characterised five stage-specific expression patterns, and prioritised 23 candidate genes.",
+      "Evaluated candidate associations in three additional public cohorts using Spearman correlation and false discovery rate correction."
+    ],
+    github: "https://github.com/nissankararaoThanvitha/liver_graph",
     live: "#"
   },
   {
-    title: "TypeRivals",
-    description: "Developed a real-time multiplayer typing game supporting seamless 1v1 typing races using React.js and Node.js. Implemented live opponent progress tracking, WPM calculation, and accuracy monitoring using WebSockets. Built a custom matchmaking system and responsive UI with Tailwind CSS for an engaging user experience.",
-    tech: ["React.js", "Node.js", "WebSockets", "Tailwind CSS", "MongoDB"],
+    title: "SafePath — Safety-Aware Walking Route Planner",
+    description: "A full-stack pilot for comparing walking routes and viewing the mapped conditions along each option.",
+    tech: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "Neon PostgreSQL", "PostGIS", "MapLibre GL JS", "Geoapify", "OpenStreetMap"],
     features: [
-      "Real-time 1v1 typing races with WebSockets",
-      "Live opponent progress tracking",
-      "WPM (Words Per Minute) calculation",
-      "Accuracy monitoring and scoring",
-      "Custom matchmaking system",
-      "Responsive UI with Tailwind CSS",
-      "MongoDB for game state persistence"
+      "Built a full-stack route planner pilot that compares walking routes by distance, travel time, and mapped conditions.",
+      "Implemented departure-time analysis that estimates when walkers reach nearby businesses and classifies them as expected open, expected closed, or hours unknown using published schedules.",
+      "Visualized streetlight evidence, nearby assistance, and access restrictions across route segments of up to 100 metres. Reported evidence confidence separately and withheld route rankings when data was insufficient."
     ],
-    github: "#",
+    github: "https://github.com/nikitha776/SafePath",
     live: "#"
   },
   {
@@ -55,6 +64,23 @@ const projects = [
     ],
     github: "#",
     live: "#"
+  },
+  {
+    title: "TypeRivals",
+    description: "Developed a real-time multiplayer typing game supporting seamless 1v1 typing races using React.js and Node.js. Implemented live opponent progress tracking, WPM calculation, and accuracy monitoring using WebSockets. Built a custom matchmaking system and responsive UI with Tailwind CSS for an engaging user experience.",
+    image: typeRivalsPreview,
+    tech: ["React.js", "Node.js", "WebSockets", "Tailwind CSS", "MongoDB"],
+    features: [
+      "Real-time 1v1 typing races with WebSockets",
+      "Live opponent progress tracking",
+      "WPM (Words Per Minute) calculation",
+      "Accuracy monitoring and scoring",
+      "Custom matchmaking system",
+      "Responsive UI with Tailwind CSS",
+      "MongoDB for game state persistence"
+    ],
+    github: "#",
+    live: "https://typerival.nikitha.space/"
   },
   {
     title: "Real-Time Chat Application",
